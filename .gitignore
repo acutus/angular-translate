@@ -1,14 +1,14 @@
-/node_modules
-/components
-/bower_components
-/dist
+/node_modules/
+/components/
+/bower_components/
+/dist/
 /demo/js/angular-translate-latest.js
 
 # OS X
 .DS_Store
 
 # IntelliJ stuff
-.idea
+/.idea/
 *.iml
 # Eclipse (plugins)
 /atlassian-ide-plugin.xml
