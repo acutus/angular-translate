@@ -1408,12 +1408,14 @@ angular.module('pascalprecht.translate').provider('$translate', ['$STORAGE_KEY',
             translations(translation.key, translation.table);
             deferred.resolve(translation.key);
 
+            useLanguage(translation.key);
             if ($nextLang === key) {
-              useLanguage(translation.key);
               $nextLang = undefined;
             }
           }, function (key) {
-            $nextLang = undefined;
+            if ($nextLang === key) {
+              $nextLang = undefined;
+            }
             $rootScope.$emit('$translateChangeError');
             deferred.reject(key);
             $rootScope.$emit('$translateChangeEnd');
